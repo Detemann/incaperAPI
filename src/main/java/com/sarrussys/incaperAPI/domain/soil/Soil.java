@@ -26,11 +26,17 @@ public class Soil {
     private double p_perc;
     @Column(name = "k_perc")
     private double k_perc;
+    @Column(name = "data")
+    private String data;
+    @Column(name = "hora")
+    private String hora;
 
     public Soil(RequestSoil soil) {
         this.umidade_perc = soil.umidade_perc();
         this.n_perc = soil.n_perc();
         this.p_perc = soil.p_perc();
         this.k_perc = soil.k_perc();
+        this.hora = soil.hora();
+        this.data = soil.data();
     }
 }
