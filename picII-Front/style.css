@@ -122,3 +122,8 @@ ul li.item-menu a .icon > i{
 .bi-thermometer-high {
     background-image: url("./resources/icons/thermometer.svg");
 }
+.small-chart {
+  max-width: 300px; /* Define a largura máxima do gráfico */
+  max-height: 300px; /* Define a altura máxima do gráfico */
+  margin: auto; /* Centraliza o gráfico */
+}

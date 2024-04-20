@@ -48,16 +48,26 @@
 
   <!-- Conteúdo principal -->
   <main class="content container">
-    <div class="page-header">
-        <h1 class="page-title text-center">Gráficos</h1>
+      <div class="page-header">
+          <h1 class="page-title text-center">Gráficos</h1>
       </div>
       <div class="row">
-        <div class="col-md-6">
-          <canvas id="chart1"></canvas>
-        </div>
-        <div class="col-md-6">
-          <canvas id="chart2"></canvas>
-        </div>
+          <div class="col-md-12">
+              <label for="dayFilter">Escolha o intervalo de dias:</label>
+              <select id="dayFilter" class="form-control" style="width: 200px; margin-bottom: 20px;">
+                  <option value="7">Últimos 7 dias</option>
+                  <option value="15">Últimos 15 dias</option>
+                  <option value="30">Últimos 30 dias</option>
+              </select>
+          </div>
+          <div class="col-md-12">
+              <h2>Umidade</h2>
+              <canvas id="humidityChart"></canvas>
+          </div>
+          <div class="col-md-12">
+              <h2>N-P-K</h2>
+              <canvas id="chart2"></canvas>
+          </div>
       </div>
   </main>
 
