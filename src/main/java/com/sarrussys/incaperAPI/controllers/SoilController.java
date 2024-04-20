@@ -1,8 +1,8 @@
 package com.sarrussys.incaperAPI.controllers;
 
-import com.sarrussys.incaperAPI.domain.soil.RequestSoil;
-import com.sarrussys.incaperAPI.domain.soil.Soil;
-import com.sarrussys.incaperAPI.domain.soil.SoilRepository;
+import com.sarrussys.incaperAPI.Model.soil.RequestSoil;
+import com.sarrussys.incaperAPI.Model.soil.Soil;
+import com.sarrussys.incaperAPI.Model.soil.SoilRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

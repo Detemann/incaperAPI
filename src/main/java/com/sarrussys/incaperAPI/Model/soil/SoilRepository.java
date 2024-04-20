@@ -1,4 +1,4 @@
-package com.sarrussys.incaperAPI.domain.soil;
+package com.sarrussys.incaperAPI.Model.soil;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

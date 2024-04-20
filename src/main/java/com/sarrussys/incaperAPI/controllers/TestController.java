@@ -1,8 +1,8 @@
 package com.sarrussys.incaperAPI.controllers;
 
-import com.sarrussys.incaperAPI.domain.test.RequestTest;
-import com.sarrussys.incaperAPI.domain.test.Test;
-import com.sarrussys.incaperAPI.domain.test.TestRepository;
+import com.sarrussys.incaperAPI.Model.test.RequestTest;
+import com.sarrussys.incaperAPI.Model.test.Test;
+import com.sarrussys.incaperAPI.Model.test.TestRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
