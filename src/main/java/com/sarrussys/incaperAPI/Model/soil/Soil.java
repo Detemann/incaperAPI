@@ -1,4 +1,4 @@
-package com.sarrussys.incaperAPI.domain.soil;
+package com.sarrussys.incaperAPI.Model.soil;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,10 @@ public class Soil {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "temperaturaSub")
+    private double temperaturaSub;
+    @Column(name = "temperaturaAci")
+    private double temperaturaAci;
     @Column(name = "umidade_perc")
     private double umidade_perc;
     @Column(name = "n_perc")
@@ -32,6 +35,8 @@ public class Soil {
     private String hora;
 
     public Soil(RequestSoil soil) {
+        this.temperaturaSub = soil.temperaturaSub();
+        this.temperaturaAci = soil.temperaturaAci();
         this.umidade_perc = soil.umidade_perc();
         this.n_perc = soil.n_perc();
         this.p_perc = soil.p_perc();
