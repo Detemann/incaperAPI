@@ -1,0 +1,97 @@
+/* Estilos gerais */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body{
+  height: 100vh;
+}
+
+/* Estilos da barra superior */
+.page-header {
+    background-color: #222831; /* Cor de fundo da barra */
+    color: #fff; /* Cor do texto */
+    padding: 10px 4%; /* Espaçamento interno */
+    width: 100%; /* Largura total */
+    position: fixed; /* Fixa no topo da tela */
+    top: 0; /* Posiciona no topo */
+    left: 0; /* Alinha à esquerda */
+    z-index: 1000; /* Certifique-se de que esteja sobreposto a outros elementos */
+
+}
+
+/* Estilos do título da barra superior */
+  .page-title {
+    margin: 0; /* Remove margem padrão */
+    padding-left: 20px; /* Espaçamento interno à esquerda */
+  }
+  
+
+/*Menu Lateral*/
+nav.menu-lateral{
+    width: 240px;
+    height: 100%;
+    background-color: #31363F;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #76ABAE;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-expandir{
+  width: 100%;
+  padding-left: 5px;
+}
+
+.btn-expandir > i{
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+ul{
+  height: 100%;
+  list-style-type: none;
+}
+
+ul li.item-menu{
+  transition: .5s;
+}
+
+ul li.item-menu:hover{
+  background: #76ABAE;
+}
+
+ul li.item-menu a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 20px 4%;
+  display: flex;
+  line-height: 40px;
+}
+
+ul li.item-menu a .txt-link{
+  margin-left: 20px;
+}
+
+ul li.item-menu a .icon > i{
+  font-size: 30px;
+}
+
+/* Estilos do conteúdo principal */
+.content {
+
+    padding-top: 80px; /* Altura da .page-header + 20px de espaçamento */
+    max-width: 80%; /* Define a largura máxima do conteúdo */
+    margin: 0 auto auto 260px; /* Centraliza o conteúdo na página */
+} 
