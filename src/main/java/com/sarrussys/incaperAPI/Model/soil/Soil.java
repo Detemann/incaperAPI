@@ -18,17 +18,17 @@ public class Soil {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "temperaturaSub")
-    private double temperaturaSub;
+    private Double temperaturaSub;
     @Column(name = "temperaturaAci")
-    private double temperaturaAci;
+    private Double temperaturaAci;
     @Column(name = "umidade_perc")
-    private double umidade_perc;
+    private Double umidade_perc;
     @Column(name = "n_perc")
-    private double n_perc;
+    private Double n_perc;
     @Column(name = "p_perc")
-    private double p_perc;
+    private Double p_perc;
     @Column(name = "k_perc")
-    private double k_perc;
+    private Double k_perc;
     @Column(name = "data")
     private String data;
     @Column(name = "hora")
