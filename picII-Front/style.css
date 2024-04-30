@@ -127,3 +127,6 @@ ul li.item-menu a .icon > i{
   max-height: 300px; /* Define a altura máxima do gráfico */
   margin: auto; /* Centraliza o gráfico */
 }
+i{
+  font-size: 25px;
+}

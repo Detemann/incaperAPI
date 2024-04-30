@@ -7,6 +7,7 @@ import com.sarrussys.incaperAPI.Model.soil.Soil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
 import java.util.List;
 
 @Service
@@ -18,7 +19,7 @@ public class AtmosphereService {
         return atmosphereRepository.findAll();
     }
 
-    public void addSample(RequestAtmosphere sample) {
+    public void addSample(RequestAtmosphere sample) throws ParseException {
         Atmosphere newSample = new Atmosphere(sample);
         atmosphereRepository.save(newSample);
     }

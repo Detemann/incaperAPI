@@ -48,37 +48,43 @@
 
   <!-- Conteúdo principal -->
   <main class="content container">
-    <div class="page-header">
-        <h1 class="page-title text-center">Tabelas</h1>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-6">
-          <table id="table1" class="table">
-            <thead>
-              <tr>
-                <th>Mês</th>
-                <th>Temperatura Média (°C)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Aqui serão preenchidos os dados da tabela 1 -->
-            </tbody>
-          </table>
-        </div>
-        <div class="col-md-6">
-          <table id="table2" class="table">
-            <thead>
-              <tr>
-                <th>Tipo de Clima</th>
-                <th>Ocorrência (dias)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Aqui serão preenchidos os dados da tabela 2 -->
-            </tbody>
-          </table>
-        </div>
+      <h1>Ultimas medidas</h1>
+      <h5>Não ordenadas</h5>
+      <div class="container mt-5">
+          <div class="row">
+              <div class="col-md-6">
+                  <h2>Terra</h2>
+                  <table id="terra" class="table table-striped">
+                      <thead>
+                      <tr>
+                          <th scope="col">Umidade</th>
+                          <th scope="col">N</th>
+                          <th scope="col">P</th>
+                          <th scope="col">K</th>
+                          <th scope="col">Data</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                  </table>
+              </div>
+              <div class="col-md-6">
+                  <h2>Atmosfera</h2>
+                  <table id="atmosphere" class="table table-striped">
+                      <thead>
+                      <tr>
+                          <th scope="col">Temperatura</th>
+                          <th scope="col">Umidade</th>
+                          <th scope="col">Chuva (mm)</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                  </table>
+              </div>
+          </div>
       </div>
   </main>
 

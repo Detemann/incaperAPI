@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgroFert</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Font Awesome e Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Estilos customizados -->
     <link href="style.css" rel="stylesheet">
@@ -46,20 +46,65 @@
 </nav>
 
 <!-- Conteúdo principal -->
-<main class="content container">
-    <h1>Leituras mais recentes</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <h2>N-P-K</h2>
-            <canvas id="pieChart" class="small-chart"></canvas> <!-- Gráfico de Pizza NPK -->
+<main class="content container">        
+    <div class="card text-center">
+        <div class="card-header">
+            Leituras mais recentes
         </div>
-
-        <div class="col-md-6">
-            <h2>Umidade</h2>
-            <canvas id="humidityChart"></canvas> <!-- Gráfico de Linha Umidade -->
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <div class="row justify-content-center">
+                <div class="card col-md-5 m-1">
+                    <div class="card-header">
+                        N-P-K <i class="fa-solid fa-flask-vial text-success"></i>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <canvas id="pieChart" class="small-chart"></canvas> <!-- Gráfico de Pizza NPK -->
+                            <footer class="blockquote-footer mt-1">ultima leitura</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="card col-md-5 m-1">
+                    <div class="card-header">
+                        Umidade <i class="fa-solid fa-droplet text-primary"></i>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">        
+                            <canvas id="humidityChart"></canvas> <!-- Gráfico de Linha Umidade -->
+                            <footer class="blockquote-footer mt-1">ultimas 7 leituras</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="card col-md-5 m-1">
+                    <div class="card-header">
+                        Temperatura Atual<i class="fa-solid fa-temperature-three-quarters text-danger"></i>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <!--ultima informacao de temperatura coletada-->
+                            <p>32º</p>
+                            <footer class="blockquote-footer mt-1">ultima leitura</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="card col-md-5 m-1">
+                    <div class="card-header">
+                        Umidade Atual <i class="fa-solid fa-droplet text-primary"></i>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <span id="umidadeAtual"></span>
+                            <footer class="blockquote-footer mt-1">ultima leitura</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>  
+            <a href="charts.html" class="btn btn-primary col-md-4 mt-4" style="text-align: center;">Gráficos Detalhados</a>
         </div>
-
+        
     </div>
+</div>          
 </main>
 
 <!-- Scripts JavaScript -->

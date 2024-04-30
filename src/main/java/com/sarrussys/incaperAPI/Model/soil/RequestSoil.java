@@ -1,6 +1,7 @@
 package com.sarrussys.incaperAPI.Model.soil;
 
 public record RequestSoil(Integer id,
+                          Integer deviceId,
                           Double temperaturaSub,
                           Double temperaturaAci,
                           Double umidade_perc,

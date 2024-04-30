@@ -52,7 +52,7 @@
           <h1 class="page-title text-center">Gráficos</h1>
       </div>
       <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12" hidden>
               <label for="dayFilter">Escolha o intervalo de dias:</label>
               <select id="dayFilter" class="form-control" style="width: 200px; margin-bottom: 20px;">
                   <option value="7">Últimos 7 dias</option>
@@ -67,6 +67,10 @@
           <div class="col-md-12">
               <h2>N-P-K</h2>
               <canvas id="chart2"></canvas>
+          </div>
+          <div class="col-md-12">
+              <h2>Vento</h2>
+              <canvas id="chart3"></canvas>
           </div>
       </div>
   </main>

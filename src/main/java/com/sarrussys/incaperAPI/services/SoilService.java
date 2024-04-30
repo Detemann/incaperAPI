@@ -6,6 +6,7 @@ import com.sarrussys.incaperAPI.Model.soil.SoilRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
 import java.util.List;
 
 @Service
@@ -18,7 +19,7 @@ public class SoilService {
         return soloRepository.findAll();
     }
 
-    public void addSamples(RequestSoil amostraSolo) {
+    public void addSamples(RequestSoil amostraSolo) throws ParseException {
         Soil newSoil = new Soil(amostraSolo);
         soloRepository.save(newSoil);
     }

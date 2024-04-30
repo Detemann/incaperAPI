@@ -5,6 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Table(name = "atmosphere_data")
 @Entity(name = "atmosphere")
 @Getter
@@ -20,19 +24,26 @@ public class Atmosphere {
     private Double humidity;
     @Column(name = "pluviometer")
     private Integer pluviometer;
-    /*@Column(name = "data")
-    private Date date;*/
+    @Column(name = "data")
+    private Date date;
+    @Column(name = "deviceId")
+    private Integer deviceId;
 
-    public Atmosphere(Integer id, Double temperature, Double humidity, Double pluviometer) {
+    public Atmosphere(Integer id, Double temperature, Double humidity, Double pluviometer, Integer deviceId) {
         this.id = id;
         this.temperature = temperature;
         this.humidity = humidity;
         this.pluviometer = Math.toIntExact(Math.round(pluviometer));
+        this.deviceId = deviceId;
     }
 
-    public Atmosphere(RequestAtmosphere requestAtmosphere) {
-        this.temperature = requestAtmosphere.temperature();
-        this.humidity = requestAtmosphere.humidity();
-        this.pluviometer = Math.toIntExact(Math.round(requestAtmosphere.pluviometer()));
+    public Atmosphere(RequestAtmosphere atmosphere) throws ParseException {
+        this.id = atmosphere.id();
+        this.temperature = atmosphere.temperature();
+        this.humidity = atmosphere.humidity();
+        this.pluviometer = Math.toIntExact(Math.round(atmosphere.pluviometer()));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        this.date = dateFormat.parse((atmosphere.date()+" "+atmosphere.time()));
+        this.deviceId = atmosphere.deviceId();
     }
 }
