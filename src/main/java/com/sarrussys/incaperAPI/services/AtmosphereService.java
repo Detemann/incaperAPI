@@ -4,6 +4,7 @@ import com.sarrussys.incaperAPI.Model.atmosphere.Atmosphere;
 import com.sarrussys.incaperAPI.Model.atmosphere.AtmosphereRepository;
 import com.sarrussys.incaperAPI.Model.atmosphere.RequestAtmosphere;
 import com.sarrussys.incaperAPI.Model.soil.Soil;
+import com.sarrussys.incaperAPI.controllers.RequestGeneralDataInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,4 +24,10 @@ public class AtmosphereService {
         Atmosphere newSample = new Atmosphere(sample);
         atmosphereRepository.save(newSample);
     }
+
+    public void addSampleGenralInput(RequestGeneralDataInput sample) throws ParseException {
+        Atmosphere newSample = new Atmosphere(sample);
+        atmosphereRepository.save(newSample);
+    }
 }
+

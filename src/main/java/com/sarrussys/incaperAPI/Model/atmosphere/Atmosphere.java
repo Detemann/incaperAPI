@@ -1,5 +1,6 @@
 package com.sarrussys.incaperAPI.Model.atmosphere;
 
+import com.sarrussys.incaperAPI.controllers.RequestGeneralDataInput;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -45,5 +46,14 @@ public class Atmosphere {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         this.dataHora = dateFormat.parse((atmosphere.date()+" "+atmosphere.time()));
         this.deviceId = atmosphere.deviceId();
+    }
+
+    public Atmosphere(RequestGeneralDataInput generalData) throws ParseException {
+        this.temperature = generalData.temperature();
+        this.humidity = generalData.humidity();
+        this.pluviometer = Math.toIntExact(Math.round(generalData.pluviometer()));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        this.dataHora = dateFormat.parse((generalData.date()+" "+generalData.time()));
+        this.deviceId = generalData.deviceId();
     }
 }

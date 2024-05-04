@@ -1,5 +1,6 @@
 package com.sarrussys.incaperAPI.Model.soil;
 
+import com.sarrussys.incaperAPI.controllers.RequestGeneralDataInput;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -48,5 +49,17 @@ public class Soil {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         this.dataHora = dateFormat.parse((soil.data()+" "+soil.hora()));
         this.deviceId = soil.deviceId();
+    }
+
+    public Soil(RequestGeneralDataInput generalData) throws ParseException {
+        this.temperaturaSub = generalData.temperaturaSub();
+        this.temperaturaAci = generalData.temperaturaAci();
+        this.umidade_perc = generalData.umidade_perc();
+        this.n_perc = generalData.n_perc();
+        this.p_perc = generalData.p_perc();
+        this.k_perc = generalData.k_perc();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        this.dataHora = dateFormat.parse((generalData.date()+" "+generalData.time()));
+        this.deviceId = generalData.deviceId();
     }
 }
