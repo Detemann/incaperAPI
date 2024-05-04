@@ -1,0 +1,14 @@
+{
+  "name": "picii-front",
+  "version": "1.0.0",
+  "description": "picii front-end",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Detemann",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

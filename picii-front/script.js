@@ -26,11 +26,11 @@ function fetchDataForSoil() {
         data.forEach(item => {
           const row = document.createElement('tr');
           row.innerHTML = `
-              <td>${item.umidade_perc}%</td>
+              <td>${item.umidade_perc.toFixed(2)}%</td>
               <td>${item.n_perc.toFixed(2)}</td>
               <td>${item.p_perc.toFixed(2)}</td>
               <td>${item.k_perc.toFixed(2)}</td>
-              <td>${item.data}</td>
+              <td>${item.dataHora.substring(0, 10)}</td>
             `;
           tableBody.appendChild(row);
         });
@@ -47,9 +47,9 @@ function fetchDataForAtmosphere() {
         data.forEach(item => {
           const row = document.createElement('tr');
           row.innerHTML = `
-              <td>${item.temperature ? item.temperature : '-'} °C</td>
-              <td>${item.humidity ? item.humidity : '-'}%</td>
-              <td>${item.pluviometer ? item.pluviometer : '-'} mm</td>
+              <td>${item.temperature ? item.temperature.toFixed(0) : '-'} °C</td>
+              <td>${item.humidity ? item.humidity.toFixed(2) : '-'}%</td>
+              <td>${item.pluviometer ? item.pluviometer.toFixed(0) : '-'} mm</td>
             `;
           tableBody.appendChild(row);
         });

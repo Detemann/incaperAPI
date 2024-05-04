@@ -24,8 +24,8 @@ public class Atmosphere {
     private Double humidity;
     @Column(name = "pluviometer")
     private Integer pluviometer;
-    @Column(name = "data")
-    private Date date;
+    @Column(name = "dataHora")
+    private Date dataHora;
     @Column(name = "deviceId")
     private Integer deviceId;
 
@@ -43,7 +43,7 @@ public class Atmosphere {
         this.humidity = atmosphere.humidity();
         this.pluviometer = Math.toIntExact(Math.round(atmosphere.pluviometer()));
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        this.date = dateFormat.parse((atmosphere.date()+" "+atmosphere.time()));
+        this.dataHora = dateFormat.parse((atmosphere.date()+" "+atmosphere.time()));
         this.deviceId = atmosphere.deviceId();
     }
 }

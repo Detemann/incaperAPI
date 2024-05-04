@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             // Configurações do gráfico de Linha de Umidade
-            const humidityData = data.slice(-7).map(sample => sample.umidade_perc);
-            const humidityLabels = data.slice(-7).map(sample => `${sample.data} ${sample.hora}`);
+            const humidityData = data.slice(-7).map(sample => sample.umidade_perc.toFixed(2));
+            const humidityLabels = data.slice(-7).map(sample => `${sample.dataHora.substring(0, 10)} ${sample.dataHora.substring(12, 19)}`);
 
             const humidityChartConfig = {
                 type: 'line',
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Função para retornar a última umidade
             const getLastHumidity = () => {
-                return lastSample.umidade_perc;
+                return lastSample.umidade_perc.toFixed(0);
             };
 
             // Função para retornar a última temperatura
@@ -113,8 +113,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateCharts(data) {
-        const npkData = data.map(sample => [sample.n_perc, sample.p_perc, sample.k_perc]);
-        const npkLabels = data.map(sample => `${sample.data} ${sample.hora}`);
+        const npkData = data.map(sample => [sample.n_perc.toFixed(0), sample.p_perc.toFixed(0), sample.k_perc.toFixed(0)]);
+        const npkLabels = data.map(sample => `${sample.dataHora.substring(0, 10)} ${sample.dataHora.substring(12, 19)}`);
 
         const barChartNPKConfig = {
             type: 'bar',
@@ -156,8 +156,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         };
 
-        const humidityData = data.map(sample => sample.umidade_perc);
-        const humidityLabels = data.map(sample => `${sample.data} ${sample.hora}`);
+        const humidityData = data.map(sample => sample.umidade_perc.toFixed(2));
+        const humidityLabels = data.map(sample => `${sample.dataHora.substring(0, 10)} ${sample.dataHora.substring(12, 19)}`);
 
         const humidityChartConfig = {
             type: 'line',
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Direção'
             ],
             datasets: [{
-                label: [''],
+                label: ['bomba'],
                 data: [0, 0, 0, 0, 0, 15],
                 backgroundColor: [
                     'rgb(135, 206, 250)'

@@ -16,7 +16,7 @@ public class SoilService {
     private SoilRepository soloRepository;
 
     public List<Soil> getAllSamples() {
-        return soloRepository.findAll();
+        return soloRepository.getSoilByDataHora();
     }
 
     public void addSamples(RequestSoil amostraSolo) throws ParseException {

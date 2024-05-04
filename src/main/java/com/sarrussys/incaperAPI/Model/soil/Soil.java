@@ -33,8 +33,8 @@ public class Soil {
     private Double p_perc;
     @Column(name = "k_perc")
     private Double k_perc;
-    @Column(name = "data")
-    private Date data;
+    @Column(name = "dataHora")
+    private Date dataHora;
     @Column(name = "deviceId")
     private Integer deviceId;
 
@@ -46,7 +46,7 @@ public class Soil {
         this.p_perc = soil.p_perc();
         this.k_perc = soil.k_perc();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        this.data = dateFormat.parse((soil.data()+" "+soil.hora()));
+        this.dataHora = dateFormat.parse((soil.data()+" "+soil.hora()));
         this.deviceId = soil.deviceId();
     }
 }
