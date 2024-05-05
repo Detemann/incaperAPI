@@ -9,6 +9,7 @@ import lombok.Setter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Optional;
 
 @Table(name = "atmosphere_data")
 @Entity(name = "atmosphere")

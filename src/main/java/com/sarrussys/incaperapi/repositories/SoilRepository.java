@@ -1,5 +1,6 @@
-package com.sarrussys.incaperapi.model.soil;
+package com.sarrussys.incaperapi.repositories;
 
+import com.sarrussys.incaperapi.model.soil.Soil;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
