@@ -15,12 +15,12 @@ public class SoilController {
     SoilService soilService;
 
     @GetMapping
-    public ResponseEntity getAllAmostras() {
-        return ResponseEntity.ok(soilService.getAllSamples());
+    public ResponseEntity<Object> getAllAmostras() {
+        return ResponseEntity.ok(soilService.getAll());
     }
 
     @PostMapping
-    public ResponseEntity createAmostra(@RequestBody RequestSoil amostraSolo) {
+    public ResponseEntity<Object> createAmostra(@RequestBody RequestSoil amostraSolo) {
         try {
             soilService.addSamples(amostraSolo);
             return ResponseEntity.ok().build();

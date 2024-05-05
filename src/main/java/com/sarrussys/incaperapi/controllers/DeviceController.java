@@ -14,7 +14,7 @@ public class DeviceController {
 
     private DeviceService deviceService;
     @GetMapping
-    public ResponseEntity getAllDevices() {
+    public ResponseEntity<Object> getAllDevices() {
         return ResponseEntity.ok(deviceService.getAll());
     }
 }

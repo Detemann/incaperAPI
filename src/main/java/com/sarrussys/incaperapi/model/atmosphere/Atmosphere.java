@@ -19,7 +19,7 @@ import java.util.Optional;
 public class Atmosphere {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     @Column(name = "temperature")
     private Double temperature;
     @Column(name = "humidity")
@@ -40,10 +40,10 @@ public class Atmosphere {
     }
 
     public Atmosphere(RequestAtmosphere atmosphere) throws ParseException {
-        this.id = atmosphere.id();
+        this.id = atmosphere.id() != null ? atmosphere.id() : null;
         this.temperature = atmosphere.temperature();
         this.humidity = atmosphere.humidity();
-        this.pluviometer = Math.toIntExact(Math.round(atmosphere.pluviometer()));
+        this.pluviometer = atmosphere.pluviometer();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         this.dataHora = dateFormat.parse((atmosphere.date()+" "+atmosphere.time()));
         this.deviceId = atmosphere.deviceId();
@@ -52,7 +52,7 @@ public class Atmosphere {
     public Atmosphere(RequestGeneralDataInput generalData) throws ParseException {
         this.temperature = generalData.temperature();
         this.humidity = generalData.humidity();
-        this.pluviometer = Math.toIntExact(Math.round(generalData.pluviometer()));
+        this.pluviometer = generalData.pluviometer();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         this.dataHora = dateFormat.parse((generalData.date()+" "+generalData.time()));
         this.deviceId = generalData.deviceId();

@@ -27,7 +27,7 @@ public class Device {
     private User owner;
 
     public Device(RequestDevice device) throws ParseException {
-        this.deviceId = device.id();
+        this.deviceId = device.id() != null ? device.id() : null;
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         this.lastLog = dateFormat.parse(device.lastLog());
     }

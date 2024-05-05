@@ -4,6 +4,6 @@ public record RequestAtmosphere(Integer id,
                                 Integer deviceId,
                                 Double temperature,
                                 Double humidity,
-                                Double pluviometer,
+                                Integer pluviometer,
                                 String date,
                                 String time) { }

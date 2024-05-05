@@ -17,7 +17,7 @@ public class GeneralDataInput {
     private SoilService soilService;
 
     @PostMapping
-    public ResponseEntity reciveAllData(RequestGeneralDataInput newGeneralDataInput) {
+    public ResponseEntity<Object> reciveAllData(RequestGeneralDataInput newGeneralDataInput) {
         try {
             atmosphereService.addSampleGenralInput(newGeneralDataInput);
             soilService.addSamplesGeneralInput(newGeneralDataInput);
@@ -25,9 +25,5 @@ public class GeneralDataInput {
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body(e.getMessage());
         }
-    }
-    @GetMapping
-    public ResponseEntity bomba() {
-        return ResponseEntity.ok("BOMBA");
     }
 }

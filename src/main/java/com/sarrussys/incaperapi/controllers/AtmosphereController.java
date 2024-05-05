@@ -8,8 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/atmosphere")
@@ -19,18 +17,18 @@ public class AtmosphereController {
     private AtmosphereService atmosphereService;
 
     @GetMapping
-    public ResponseEntity getAllSamples() {
+    public ResponseEntity<Object> getAllSamples() {
         List<Atmosphere> atmospheres = atmosphereService.getAll();
         return ResponseEntity.ok(atmospheres);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity getById(@PathVariable("id") Integer id) {
+    public ResponseEntity<Object> getById(@PathVariable("id") Integer id) {
         return ResponseEntity.ok(atmosphereService.getById(id));
     }
 
     @PostMapping
-    public ResponseEntity addSample(@RequestBody RequestAtmosphere newSample) {
+    public ResponseEntity<Object> addSample(@RequestBody RequestAtmosphere newSample) {
         try {
             atmosphereService.addSample(newSample);
             return ResponseEntity.ok().build();

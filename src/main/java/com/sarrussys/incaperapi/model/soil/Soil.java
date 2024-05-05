@@ -21,7 +21,7 @@ public class Soil {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     @Column(name = "temperaturaSub")
     private Double temperaturaSub;
     @Column(name = "temperaturaAci")
@@ -40,6 +40,7 @@ public class Soil {
     private Integer deviceId;
 
     public Soil(RequestSoil soil) throws ParseException {
+        this.id = soil.id() != null ? soil.id() : null;
         this.temperaturaSub = soil.temperaturaSub();
         this.temperaturaAci = soil.temperaturaAci();
         this.umidade_perc = soil.umidade_perc();

@@ -29,7 +29,7 @@ public class User {
     private List<Device> ownedDevices;
 
     public User(RequestUser user) {
-        this.userId = user.id();
+        this.userId = user.id() != null ? user.id() : null;
         this.name = user.name();
         this.password = user.password();
         this.email = user.email();
