@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Main-Class: com.sarrussys.incaperAPI.IncaperApiApplication
+Main-Class: com.sarrussys.incaperapi.IncaperApiApplication
 Class-Path: C:\Users\Detemann\Documents\Projetos\picAPI3\target\classes\
  com\sarrussys\incaperAPI\IncaperApiApplication.class
 
