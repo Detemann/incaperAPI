@@ -26,4 +26,8 @@ public class GeneralDataInput {
             return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }
+    @GetMapping("/eto")
+    public ResponseEntity<Object> evapotranspirationToday() {
+        return ResponseEntity.ok().body(atmosphereService.calcEvapotranspiration());
+    }
 }

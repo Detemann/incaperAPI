@@ -16,6 +16,9 @@ public class AtmosphereService {
     @Autowired
     private AtmosphereRepository atmosphereRepository;
 
+    @Autowired
+    private Evapotranspiration evapotranspiration;
+
     Check check = new Check();
 
     public List<Atmosphere> getAll() {
@@ -40,6 +43,16 @@ public class AtmosphereService {
     public void addSampleGenralInput(RequestGeneralDataInput sample) throws ParseException {
         Atmosphere newSample = new Atmosphere(sample);
         atmosphereRepository.save(newSample);
+    }
+
+    public List<Atmosphere> getTodayAtmosphereData(Date date) {
+        List<Atmosphere> atmospheres = atmosphereRepository.getByDate(date);
+        if(atmospheres.isEmpty()) throw new NoSuchElementException("Dados atmosféricos com id"+ date.toString() +" não encontrados");
+        return atmospheres;
+    }
+
+    public Double calcEvapotranspiration() {
+        return evapotranspiration.calcularEvapotranspiracao(this.getTodayAtmosphereData(new Date()));
     }
 }
 
