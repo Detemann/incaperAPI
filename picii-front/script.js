@@ -18,7 +18,7 @@ document.querySelectorAll('.dropdown-toggle').forEach(item => {
 
 // Método para buscar dados da API
 function fetchDataForSoil() {
-  fetch('http://localhost:8080/soil')
+  fetch('http://168.138.248.181:8080/soil')
       .then(response => response.json())
       .then(data => {
         const tableBody = document.getElementById('terra').childNodes[1];
@@ -39,7 +39,7 @@ function fetchDataForSoil() {
 }
 
 function fetchDataForAtmosphere() {
-  fetch('http://localhost:8080/atmosphere')
+  fetch('http://168.138.248.181:8080/atmosphere')
       .then(response => response.json())
       .then(data => {
           const tableBody = document.getElementById('atmosphere').childNodes[1];

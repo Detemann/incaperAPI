@@ -30,12 +30,12 @@
                 <span class="txt-link">Dashboard</span>
             </a>
         </li>
-        <li class="item-menu">
-            <a href="charts.html">
-                <span class="icon"><i class="bi bi-bar-chart-line"></i></span>
-                <span class="txt-link">Gráficos</span>
-            </a>
-        </li>
+<!--        <li class="item-menu">-->
+<!--            <a href="charts.html">-->
+<!--                <span class="icon"><i class="bi bi-bar-chart-line"></i></span>-->
+<!--                <span class="txt-link">Gráficos</span>-->
+<!--            </a>-->
+<!--        </li>-->
         <li class="item-menu">
             <a href="tables.html">
                 <span class="icon"><i class="bi bi-table"></i></span>
@@ -46,8 +46,18 @@
 </nav>
 
 <!-- Conteúdo principal -->
-<main class="content container">        
+<main class="content container">
     <div class="card text-center">
+<!--        <div class="card-header">-->
+<!--            Leituras mais recentes-->
+<!--            &lt;!&ndash; Seletor de dias &ndash;&gt;-->
+<!--            <select id="daysFilter" class="form-select mb-3" onchange="fetchChartData(this.value)">-->
+<!--                <option value="7" selected>Últimas 7 leituras</option>-->
+<!--                <option value="15">Últimas 15 leituras</option>-->
+<!--                <option value="30">Últimas 30 leituras</option>-->
+<!--            </select>-->
+
+<!--        </div>-->
         <div class="card-header">
             Leituras mais recentes
         </div>
@@ -70,9 +80,20 @@
                         Umidade <i class="fa-solid fa-droplet text-primary"></i>
                     </div>
                     <div class="card-body">
-                        <blockquote class="blockquote mb-0">        
+                        <blockquote class="blockquote mb-0">
                             <canvas id="humidityChart"></canvas> <!-- Gráfico de Linha Umidade -->
                             <footer class="blockquote-footer mt-1">ultimas 7 leituras</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="card col-md-5 m-1">
+                    <div class="card-header">
+                        Temperatura <i class="fa-solid fa-temperature-three-quarters text-danger"></i>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <canvas id="temperatureChart"></canvas> <!-- Gráfico de Linha Temperatura -->
+                            <footer class="blockquote-footer mt-1">últimas 7 leituras</footer>
                         </blockquote>
                     </div>
                 </div>
@@ -83,7 +104,7 @@
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
                             <!--ultima informacao de temperatura coletada-->
-                            <p>32º</p>
+                            <p id="temperaturaAtual"></p>
                             <footer class="blockquote-footer mt-1">ultima leitura</footer>
                         </blockquote>
                     </div>
@@ -94,17 +115,17 @@
                     </div>
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
-                            <span id="umidadeAtual"></span>
+                            <p id="umidadeAtual"></p>
                             <footer class="blockquote-footer mt-1">ultima leitura</footer>
                         </blockquote>
                     </div>
                 </div>
-            </div>  
-            <a href="charts.html" class="btn btn-primary col-md-4 mt-4" style="text-align: center;">Gráficos Detalhados</a>
+            </div>
+<!--            <a href="charts.html" class="btn btn-primary col-md-4 mt-4" style="text-align: center;">Gráficos Detalhados</a>-->
         </div>
-        
+
     </div>
-</div>          
+    </div>
 </main>
 
 <!-- Scripts JavaScript -->
