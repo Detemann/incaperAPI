@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/device")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class DeviceController {
 
     private DeviceService deviceService;
