@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/samples")
-//@CrossOrigin
+@CrossOrigin(origins = "*")
 public class GeneralDataInput {
     @Autowired
     private AtmosphereService atmosphereService;

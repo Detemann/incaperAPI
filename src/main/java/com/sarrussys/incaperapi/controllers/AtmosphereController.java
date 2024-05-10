@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/atmosphere")
-@CrossOrigin // apague o comentario em caso de erro de CORS
+@CrossOrigin(origins = "*") // apague o comentario em caso de erro de CORS
 public class AtmosphereController {
     @Autowired
     private AtmosphereService atmosphereService;

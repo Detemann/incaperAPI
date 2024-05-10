@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/soil")
-@CrossOrigin // apague o comentario em caso de erro de CORS
+@CrossOrigin(origins = "*") // apague o comentario em caso de erro de CORS
 public class SoilController {
 
     @Autowired
