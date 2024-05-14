@@ -1,8 +1,10 @@
+const serverIp = "http://localhost" //http://168.138.248.181
+
 document.addEventListener('DOMContentLoaded', function () {
     fetchChartData();
 
     function fetchChartData(days = 7) {
-        fetch('http://168.138.248.181:8080/soil')
+        fetch(serverIp+':8080/soil')
             .then(response => response.json())
             .then(data => {
                 data = data.slice(-days);

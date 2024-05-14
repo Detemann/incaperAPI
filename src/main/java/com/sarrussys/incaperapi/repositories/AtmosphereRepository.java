@@ -10,7 +10,7 @@ import java.util.List;
 public interface AtmosphereRepository extends JpaRepository<Atmosphere, Integer> {
     @Query(value = "SELECT * " +
             "FROM atmosphere_data atm " +
-            "WHERE atm.data_hora > CURRENT_DATE " +
-            "AND atm.data_hora < CURRENT_DATE + INTERVAL '1 day' - INTERVAL '1 second';", nativeQuery = true)
+            "WHERE DATE_TRUNC('day', atm.data_hora) = DATE_TRUNC('day', CURRENT_DATE)", nativeQuery = true) //" +
+            //"AND DATE_TRUNC('day', atm.data_hora) < CURRENT_DATE + INTERVAL '1 day' - INTERVAL '1 second';", nativeQuery = true)
     public List<Atmosphere> getByDate(Date date);
 }
