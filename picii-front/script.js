@@ -1,4 +1,4 @@
-const serverPath = "http://localhost"; //http://168.138.248.181
+const serverPath = "http://168.138.248.181"; //http://168.138.248.181
 
 document.addEventListener("DOMContentLoaded", function () {
   // Seu código JavaScript aqui

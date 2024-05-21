@@ -1,4 +1,4 @@
-const serverIp = "http://localhost" //http://168.138.248.181
+const serverIp = "http://168.138.248.181" //"http://localhost"
 
 document.addEventListener('DOMContentLoaded', function () {
     fetchChartData();

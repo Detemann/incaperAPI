@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 
 const app = express();
@@ -9,6 +10,7 @@ const publicDirectoryPath = path.join(__dirname, '');
 
 // Define a pasta pública
 app.use(express.static(publicDirectoryPath));
+app.use(cors());
 
 // Rota para a página principal
 app.get('/', (req, res) => {
