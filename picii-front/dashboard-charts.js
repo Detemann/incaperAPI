@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchChartData();
 
     function fetchChartData(days = 7) {
-        fetch(serverIp+':8080/soil')
+        fetch(serverIp + ':8080/soil')
             .then(response => response.json())
             .then(data => {
                 data = data.slice(-days);
@@ -57,65 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         };
 
-         // Arrays para guardar os dados de N, P e K para cada uma das últimas 7 leituras
-            const nData = [];
-            const pData = [];
-            const kData = [];
-            const labels = [];
-
-            // Pegando os últimos 7 registros (ou menos, se não houver 7)
-            const recentData = data.slice(-7);
-            recentData.forEach(sample => {
-                nData.push(sample.n_perc.toFixed(2));
-                pData.push(sample.p_perc.toFixed(2));
-                kData.push(sample.k_perc.toFixed(2));
-                // Formatando a data/hora para ser usada como rótulo
-                labels.push(`${sample.dataHora.substring(0, 10)} ${sample.dataHora.substring(11, 19)}`);
-            });
-
-            // Configuração do gráfico de barras N-P-K
-            const barChartConfig = {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'N%',
-                            data: nData,
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'P%',
-                            data: pData,
-                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'K%',
-                            data: kData,
-                            backgroundColor: 'rgba(255, 206, 86, 0.2)',
-                            borderColor: 'rgba(255, 206, 86, 1)',
-                            borderWidth: 1
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    },
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        }
-                    }
-                }
-            };
         // Humidity Line Chart
         const humidityData = data.map(sample => sample.umidade_perc.toFixed(2));
         const humidityLabels = data.map(sample => `${sample.dataHora.substring(0, 10)} ${sample.dataHora.substring(11, 19)}`);
@@ -165,6 +106,49 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         };
 
+        // NPK Bar Chart
+        const npkLabels = data.map(sample => `${sample.dataHora.substring(0, 10)} ${sample.dataHora.substring(11, 19)}`);
+        const nData = data.map(sample => sample.n_perc.toFixed(2));
+        const pData = data.map(sample => sample.p_perc.toFixed(2));
+        const kData = data.map(sample => sample.k_perc.toFixed(2));
+
+        const barChartConfig = {
+            type: 'bar',
+            data: {
+                labels: npkLabels,
+                datasets: [
+                    {
+                        label: 'N%',
+                        data: nData,
+                        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'P%',
+                        data: pData,
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'K%',
+                        data: kData,
+                        backgroundColor: 'rgba(255, 206, 86, 0.5)',
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
         var ctxPie = document.getElementById('pieChart').getContext('2d');
         new Chart(ctxPie, pieChartConfig);
 
@@ -176,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var ctxBar = document.getElementById('barChart').getContext('2d');
         new Chart(ctxBar, barChartConfig);
+
         // Update last temperature and humidity
         document.getElementById('temperaturaAtual').innerHTML = lastSample.temperaturaAci + "º";
         document.getElementById('umidadeAtual').innerHTML = lastSample.umidade_perc.toFixed(0) + "%";

@@ -63,64 +63,92 @@
         </div>
         <div class="card-body">
             <h5 class="card-title"></h5>
-            <div class="row justify-content-center">
-                <div class="card col-md-5 m-1">
-                    <div class="card-header">
-                        N-P-K <i class="fa-solid fa-flask-vial text-success"></i>
-                    </div>
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <canvas id="pieChart" class="small-chart"></canvas> <!-- Gráfico de Pizza NPK -->
-                            <footer class="blockquote-footer mt-1">ultima leitura</footer>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="card col-md-5 m-1">
-                    <div class="card-header">
-                        Umidade <i class="fa-solid fa-droplet text-primary"></i>
-                    </div>
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <canvas id="humidityChart"></canvas> <!-- Gráfico de Linha Umidade -->
-                            <footer class="blockquote-footer mt-1">ultimas 7 leituras</footer>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="card col-md-5 m-1">
-                    <div class="card-header">
-                        Temperatura <i class="fa-solid fa-temperature-three-quarters text-danger"></i>
-                    </div>
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <canvas id="temperatureChart"></canvas> <!-- Gráfico de Linha Temperatura -->
-                            <footer class="blockquote-footer mt-1">últimas 7 leituras</footer>
-                        </blockquote>
+
+                <div class="card col-md-12 m-1">
+                    <div class="card-header">Solo <i class="fa-solid fa-seedling text-success"></i></div>
+                    <div class="row justify-content-center p-3">
+                        <div class="card col-md-5">
+                            <div class="card-header">
+                                N-P-K <i class="fa-solid fa-flask-vial text-success"></i>
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <canvas id="barChart"></canvas>
+                                    <footer class="blockquote-footer mt-1">ultimas 7 leitura</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="card col-md-5">
+                            <div class="card-header">
+                                N-P-K <i class="fa-solid fa-flask-vial text-success"></i>
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <canvas id="pieChart" class="small-chart"></canvas> <!-- Gráfico de Pizza NPK -->
+                                    <footer class="blockquote-footer mt-1">ultima leitura</footer>
+                                </blockquote>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
-                <div class="card col-md-5 m-1">
+
+                <div class="card col-md-12 m-1 ">
                     <div class="card-header">
-                        Temperatura Atual <i class="fa-solid fa-temperature-three-quarters text-danger"></i>
+                        Atmosfera <i class="fa-solid fa-cloud text-primary"></i>
                     </div>
-                    <div class="card-body row blockquote mb-0 align-items-center">
-                        <blockquote>
-                            <!--ultima informacao de temperatura coletada-->
-                            <p class="col" id="temperaturaAtual"></p>
-                            <footer class="blockquote-footer mt-1">ultima leitura</footer>
-                        </blockquote>
+                    <div class="row justify-content-center p-3">
+                        <div class="card col-md-5">
+                            <div class="card-header">
+                                Umidade <i class="fa-solid fa-droplet text-primary"></i>
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <canvas id="humidityChart"></canvas> <!-- Gráfico de Linha Umidade -->
+                                    <footer class="blockquote-footer mt-1">ultimas 7 leituras</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="card col-md-5 m-1">
+                            <div class="card-header">
+                                Umidade Atual <i class="fa-solid fa-droplet text-primary"></i>
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p id="umidadeAtual"></p>
+                                    <footer class="blockquote-footer mt-1">ultima leitura</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="card col-md-5 m-1">
+                            <div class="card-header">
+                                Temperatura <i class="fa-solid fa-temperature-three-quarters text-danger"></i>
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <canvas id="temperatureChart"></canvas> <!-- Gráfico de Linha Temperatura -->
+                                    <footer class="blockquote-footer mt-1">últimas 7 leituras</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="card col-md-5 m-1">
+                            <div class="card-header">
+                                Temperatura Atual <i class="fa-solid fa-temperature-three-quarters text-danger"></i>
+                            </div>
+                            <div class="card-body row blockquote mb-0 align-items-center">
+                                <blockquote>
+                                    <!--ultima informacao de temperatura coletada-->
+                                    <p class="col" id="temperaturaAtual"></p>
+                                    <footer class="blockquote-footer mt-1">ultima leitura</footer>
+                                </blockquote>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card col-md-5 m-1">
-                    <div class="card-header">
-                        Umidade Atual <i class="fa-solid fa-droplet text-primary"></i>
-                    </div>
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <p id="umidadeAtual"></p>
-                            <footer class="blockquote-footer mt-1">ultima leitura</footer>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="card col-md-5 m-1">
+
+
+                <div class="card col-md-12 m-1">
                     <div class="card-header">
                         Evapotranspiração <i class="bi bi-sunrise text-danger"></i>
                     </div>
@@ -131,7 +159,6 @@
                         </blockquote>
                     </div>
                 </div>
-            </div>
 <!--            <a href="charts.html" class="btn btn-primary col-md-4 mt-4" style="text-align: center;">Gráficos Detalhados</a>-->
         </div>
 
